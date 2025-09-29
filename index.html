@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🐦 Flappy Bird</h1>
+            <div class="score">Skor: <span id="score">0</span></div>
+        </div>
+        
+        <div class="game-area" id="gameArea">
+            <div class="bird" id="bird"></div>
+            <div class="start-screen" id="startScreen">
+                <h2>Flappy Bird</h2>
+                <p>Space tuşuna basarak oyunu başlatın!</p>
+                <button id="startBtn">Başla</button>
+            </div>
+            <div class="game-over" id="gameOver" style="display: none;">
+                <h2>Oyun Bitti!</h2>
+                <p>Skorunuz: <span id="finalScore">0</span></p>
+                <button id="restartBtn">Tekrar Oyna</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <p>🎮 Kontroller:</p>
+            <p>Space - Zıpla</p>
+            <p>R - Yeniden Başlat</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

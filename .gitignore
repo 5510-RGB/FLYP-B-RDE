@@ -1,0 +1,35 @@
+# Build çıktıları
+bin/
+obj/
+out/
+TestResults/
+
+# Kullanıcı ve IDE ayarları
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider/JetBrains
+.idea/
+
+# Paket/önbellek
+**/packages/*
+!**/packages/build/
+
+# Loglar ve geçici dosyalar
+*.log
+*.tmp
+*.temp
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# OneDrive Office kilit dosyaları
+~$*
+
+

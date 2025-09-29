@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-header {
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score {
+    font-size: 1.5em;
+    color: #e74c3c;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.game-area {
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 70%, #90EE90 70%, #90EE90 100%);
+    border: 3px solid #2c3e50;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.bird {
+    width: 40px;
+    height: 30px;
+    background: #f39c12;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    left: 80px;
+    top: 250px;
+    transition: transform 0.1s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.bird::before {
+    content: '🐦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.bird.flap {
+    transform: rotate(-20deg);
+}
+
+.pipe {
+    position: absolute;
+    width: 60px;
+    background: linear-gradient(to bottom, #27ae60, #2ecc71);
+    border: 2px solid #1e8449;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.pipe-top {
+    top: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.pipe-bottom {
+    bottom: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.start-screen, .game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 20;
+}
+
+.start-screen h2, .game-over h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.start-screen p, .game-over p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+button {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #2980b9, #1f618d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.controls {
+    margin-top: 20px;
+    color: #2c3e50;
+    font-size: 0.9em;
+}
+
+.controls p {
+    margin: 5px 0;
+}
+
+/* Animasyonlar */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.bird {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Responsive tasarım */
+@media (max-width: 480px) {
+    .game-area {
+        width: 350px;
+        height: 500px;
+    }
+    
+    .game-header h1 {
+        font-size: 2em;
+    }
+    
+    .start-screen, .game-over {
+        padding: 20px;
+        margin: 0 10px;
+    }
+}
