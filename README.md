@@ -28,3 +28,4 @@ dotnet run
 
 ## Lisans
 MIT
+yapay zekadan destek alınmıştır 
